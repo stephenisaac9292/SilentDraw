@@ -1,0 +1,23 @@
+// context/WalletContext.jsx
+import React, { createContext, useContext } from 'react';
+import { useWallet } from '../hooks/useWallet';
+
+const WalletContext = createContext(null);
+
+export function WalletProvider({ children }) {
+  const wallet = useWallet();
+  
+  return (
+    <WalletContext.Provider value={wallet}>
+      {children}
+    </WalletContext.Provider>
+  );
+}
+
+export function useWalletContext() {
+  const context = useContext(WalletContext);
+  if (!context) {
+    throw new Error('useWalletContext must be used within WalletProvider');
+  }
+  return context;
+}
