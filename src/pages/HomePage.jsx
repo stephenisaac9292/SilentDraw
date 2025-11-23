@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useWalletContext } from '../context/WalletContext';
+import { useWalletContext } from '@/context/WalletContext';
 import { useLotteries } from '../hooks/useLotteries';
-import { Card, CardContent } from '../components/retroui/Card';
-import { Button } from '../components/retroui/Button';
-import { Badge } from '../components/retroui/Badge';
-import { LotteryCard } from '../components/lottery/LotteryCard';
-import { LoadingSpinner } from '../components/retroui/common/LoadingSpinner';
-import { initFhevm } from '../utils/fhevm';
+import { Card, CardContent } from '../../components/retroui/Card';
+import { Button } from '../../components/retroui/Button';
+import { Badge } from '../../components/retroui/Badge';
+import { LotteryCard } from '../../components/lottery/LotteryCard';
+import { LoadingSpinner } from '../../components/retroui/common/LoadingSpinner';
+import { initFhevm } from '@/utils/fhevm';
 import { Plus, Wallet, AlertCircle } from 'lucide-react';
 import { toast } from 'sonner';
 

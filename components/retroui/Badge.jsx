@@ -1,5 +1,5 @@
 import React from 'react';
-import { cn } from '../../utils/cn';
+import { cn } from '@/utils/cn';
 
 const badgeVariants = {
   default: 'border-transparent bg-primary text-primary-foreground hover:bg-primary/80',

@@ -139,10 +139,10 @@ export async function initFhevm() {
     console.log('  → Creating FHEVM instance with v0.9 config...');
     
     const config = {
-      ...SEPOLIA_V09_CONFIG,
-      // Use MetaMask provider if available, otherwise fallback to public RPC
-      network: window.ethereum || 'https://sepolia.infura.io/v3/d05efcb7210a474e8b98308181a49685',
-    };
+  ...SEPOLIA_V09_CONFIG,
+  // Don't pass window.ethereum during init - SDK will handle it later
+  network: 'https://sepolia.infura.io/v3/d05efcb7210a474e8b98308181a49685',
+};
     
     console.log('  → Config:', {
       chainId: config.chainId,

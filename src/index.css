@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Professional lottery theme */
+    --background: #FAFAFA;
+    --foreground: #0A0A0A;
+    --card: #FFFFFF;
+    --card-foreground: #0A0A0A;
+    
+    /* Primary - Lottery gold/amber */
+    --primary: #F59E0B;
+    --primary-hover: #D97706;
+    --primary-foreground: #FFFFFF;
+    
+    /* Secondary - Deep purple */
+    --secondary: #6366F1;
+    --secondary-foreground: #FFFFFF;
+    
+    /* Muted - Subtle grays */
+    --muted: #F3F4F6;
+    --muted-foreground: #6B7280;
+    
+    /* Accent - Light amber */
+    --accent: #FEF3C7;
+    --accent-foreground: #0A0A0A;
+    
+    /* Destructive - Error red */
+    --destructive: #EF4444;
+    --destructive-foreground: #FFFFFF;
+    
+    /* Border */
+    --border: #E5E7EB;
+    
+    /* Shadows */
+    --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-md: 0 6px 8px -2px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: var(--background);
+    color: var(--foreground);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Archivo Black', sans-serif;
+    line-height: 1.2;
+    font-weight: 900;
+  }
+  
+  button {
+    cursor: pointer;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  
+  input, select, textarea {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--muted);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--muted-foreground);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--foreground);
+  }
+}
+
+@layer utilities {
+  .font-head {
+    font-family: 'Archivo Black', sans-serif;
+  }
+}

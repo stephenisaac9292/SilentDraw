@@ -6,7 +6,7 @@ import contractArtifact from '../../artifacts/contracts/EncryptedLottery.sol/Enc
  * ✅ Official deployed contract address
  *    Make sure this matches your latest `npx hardhat run scripts/deploy.js --network sepolia` output.
  */
-const DEPLOYED_CONTRACT_ADDRESS = "0x0000000000000000000000000000000000000000"; // 🔴 REPLACE AFTER DEPLOYMENT
+const DEPLOYED_CONTRACT_ADDRESS = "0x3DD10ABF2a0320eE2cb8E5544631Aa8e37f92947"; // 🔴 REPLACE AFTER DEPLOYMENT
 
 /**
  * Returns the contract address from the environment or hardcoded constant.

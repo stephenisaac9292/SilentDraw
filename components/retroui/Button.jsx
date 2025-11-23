@@ -1,5 +1,5 @@
 import React from 'react';
-import { cn } from '../../utils/cn';
+import { cn } from '@/utils/cn';
 
 const buttonVariants = {
   default: 'bg-primary text-primary-foreground hover:bg-primary/90',
