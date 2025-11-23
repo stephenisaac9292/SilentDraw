@@ -104,7 +104,7 @@ export const HomePage = () => {
           </div>
 
           {/* Status Indicators */}
-          <div className="flex flex-wrap gap-2 mt-4">
+          <div className="flex gap-2 mt-4">
             {account && (
               <Badge variant="outline" className="text-xs">
                 {account.slice(0, 6)}...{account.slice(-4)}

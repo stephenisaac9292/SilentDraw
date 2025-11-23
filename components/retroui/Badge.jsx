@@ -2,10 +2,10 @@ import React from 'react';
 import { cn } from '@/utils/cn';
 
 const badgeVariants = {
-  default: 'border-transparent bg-primary text-primary-foreground hover:bg-primary/80',
-  secondary: 'border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80',
-  destructive: 'border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80',
-  outline: 'text-foreground',
+  default: 'bg-primary/10 text-primary hover:text-accent',
+  secondary: 'bg-secondary/10 text-secondary hover:text-accent',
+  destructive: 'bg-destructive/10 text-destructive hover:text-accent',
+  outline: 'bg-transparent text-foreground hover:text-accent',
 };
 
 export const Badge = React.forwardRef(
@@ -14,7 +14,7 @@ export const Badge = React.forwardRef(
       <div
         ref={ref}
         className={cn(
-          'inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2',
+          'inline-flex items-center rounded-md px-2.5 py-0.5 text-xs font-semibold transition-colors',
           badgeVariants[variant],
           className
         )}

@@ -54,17 +54,7 @@ export const Navbar = () => {
               Home
             </Button>
 
-            {account && isCorrectNetwork && (
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={() => navigate('/create')}
-                className="flex items-center gap-2"
-              >
-                <Plus size={16} />
-                <span className="hidden sm:inline">Create</span>
-              </Button>
-            )}
+             
 
             {/* Wallet Connection */}
             {!account ? (
