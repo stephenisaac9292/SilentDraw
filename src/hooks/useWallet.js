@@ -58,11 +58,14 @@ export function useWallet() {
   };
 
   useEffect(() => {
-    if (window.ethereum) {
-      window.ethereum.request({ method: 'eth_accounts' })
-        .then(accounts => {
-          if (accounts.length > 0) connectWallet();
-        });
+  if (window.ethereum) {
+    window.ethereum.request({ method: 'eth_accounts' })
+      .then(accounts => {
+        if (accounts.length > 0) connectWallet();
+      })
+      .catch(err => {
+        console.log('No accounts found:', err);
+      });
 
       window.ethereum.on('accountsChanged', (accounts) => {
         if (accounts.length === 0) {

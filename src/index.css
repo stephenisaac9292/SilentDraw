@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,43 +6,43 @@
 
 @layer base {
   :root {
-    /* Professional lottery theme */
-    --background: #FAFAFA;
-    --foreground: #0A0A0A;
-    --card: #FFFFFF;
-    --card-foreground: #0A0A0A;
+    /* Modern purple/blue lottery theme */
+    --background: #0F172A;
+    --foreground: #F8FAFC;
+    --card: #1E293B;
+    --card-foreground: #F8FAFC;
     
-    /* Primary - Lottery gold/amber */
-    --primary: #F59E0B;
-    --primary-hover: #D97706;
+    /* Primary - Electric Purple */
+    --primary: #8B5CF6;
+    --primary-hover: #7C3AED;
     --primary-foreground: #FFFFFF;
     
-    /* Secondary - Deep purple */
-    --secondary: #6366F1;
+    /* Secondary - Cyan Blue */
+    --secondary: #06B6D4;
     --secondary-foreground: #FFFFFF;
     
-    /* Muted - Subtle grays */
-    --muted: #F3F4F6;
-    --muted-foreground: #6B7280;
+    /* Muted - Dark grays */
+    --muted: #334155;
+    --muted-foreground: #94A3B8;
     
-    /* Accent - Light amber */
-    --accent: #FEF3C7;
-    --accent-foreground: #0A0A0A;
+    /* Accent - Purple tint */
+    --accent: #2D1B69;
+    --accent-foreground: #E9D5FF;
     
-    /* Destructive - Error red */
-    --destructive: #EF4444;
+    /* Destructive - Pink/Red */
+    --destructive: #F43F5E;
     --destructive-foreground: #FFFFFF;
     
     /* Border */
-    --border: #E5E7EB;
+    --border: #475569;
     
     /* Shadows */
-    --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    --shadow-md: 0 6px 8px -2px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --shadow-xs: 0 1px 2px 0 rgb(139 92 246 / 0.1);
+    --shadow-sm: 0 1px 3px 0 rgb(139 92 246 / 0.2);
+    --shadow: 0 4px 6px -1px rgb(139 92 246 / 0.3);
+    --shadow-md: 0 6px 8px -2px rgb(139 92 246 / 0.3);
+    --shadow-lg: 0 10px 15px -3px rgb(139 92 246 / 0.4);
+    --shadow-xl: 0 20px 25px -5px rgb(139 92 246 / 0.5);
   }
   
   * {
@@ -52,7 +52,7 @@
   }
   
   body {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Inter', sans-serif;
     background-color: var(--background);
     color: var(--foreground);
     line-height: 1.6;
@@ -61,24 +61,24 @@
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Archivo Black', sans-serif;
+    font-family: 'Poppins', sans-serif;
     line-height: 1.2;
-    font-weight: 900;
+    font-weight: 700;
   }
   
   button {
     cursor: pointer;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Inter', sans-serif;
   }
   
   input, select, textarea {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Inter', sans-serif;
   }
   
   /* Custom scrollbar */
   ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
   }
   
   ::-webkit-scrollbar-track {
@@ -86,17 +86,17 @@
   }
   
   ::-webkit-scrollbar-thumb {
-    background: var(--muted-foreground);
-    border-radius: 4px;
+    background: var(--primary);
+    border-radius: 5px;
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    background: var(--foreground);
+    background: var(--primary-hover);
   }
 }
 
 @layer utilities {
   .font-head {
-    font-family: 'Archivo Black', sans-serif;
+    font-family: 'Poppins', sans-serif;
   }
 }

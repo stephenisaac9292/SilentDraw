@@ -151,7 +151,14 @@ export async function initFhevm() {
       hasMetaMask: !!window.ethereum
     });
     
-    fhevmInstance = await window.relayerSDK.createInstance(config);
+    try {
+  fhevmInstance = await window.relayerSDK.createInstance(config);
+} catch (error) {
+  console.warn('Failed to create instance, retrying...', error);
+  // Retry once
+  await new Promise(resolve => setTimeout(resolve, 1000));
+  fhevmInstance = await window.relayerSDK.createInstance(config);
+}
     isInitialized = true;
     
     console.log('  ✓ FHEVM instance created successfully');
