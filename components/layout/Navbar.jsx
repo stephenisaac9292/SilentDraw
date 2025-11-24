@@ -17,19 +17,19 @@ export const Navbar = () => {
   } = useWalletContext();
 
   return (
-    <nav className="border-b bg-card sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+    <nav className="border-b bg-card/80 backdrop-blur-xl sticky top-0 z-50 shadow-lg">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="flex justify-between items-center h-20">
+          {/* Logo Section */}
+          <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center shadow-neon">
               <svg
-                width="20"
-                height="20"
+                width="24"
+                height="24"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                strokeWidth="2"
+                strokeWidth="2.5"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 className="text-primary-foreground"
@@ -38,51 +38,59 @@ export const Navbar = () => {
                 <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
               </svg>
             </div>
-            <span className="font-bold text-lg hidden sm:inline">Encrypted Lottery</span>
-            <span className="font-bold text-lg sm:hidden">Lottery</span>
+            <div className="hidden md:block">
+              <span className="font-head text-lg tracking-wider">Encrypted Lottery</span>
+            </div>
           </Link>
 
-          {/* Navigation Links */}
-          <div className="flex items-center gap-2 sm:gap-3">
-          
-
+          {/* Navigation Links & Wallet */}
+          <div className="flex items-center gap-4">
              
 
-            {/* Wallet Connection */}
-            {!account ? (
-              <Button
-                onClick={connectWallet}
-                disabled={isConnecting}
-                size="sm"
-                className="flex items-center gap-2"
-              >
-                <Wallet size={16} />
-                {isConnecting ? 'Connecting...' : 'Connect'}
-              </Button>
-            ) : (
-              <div className="flex items-center gap-2">
-                {!isCorrectNetwork && (
-                  <Button
-                    onClick={switchToSepolia}
-                    variant="destructive"
-                    size="sm"
-                    className="text-xs"
-                  >
-                    Switch Network
-                  </Button>
-                )}
+            {/* Create Button - Only show if wallet connected and correct network */}
+             
+            {/* Wallet Connection Section */}
+            <div className="flex items-center gap-3">
+              {!account ? (
                 <Button
-                  variant="outline"
+                  onClick={connectWallet}
+                  disabled={isConnecting}
                   size="sm"
-                  onClick={disconnectWallet}
-                  className="flex items-center gap-2"
+                  className="flex items-center gap-2 px-5 py-2 bg-primary text-primary-foreground hover:bg-primary-hover shadow-neon"
                 >
-                  <Badge variant="outline" className="text-xs">
-                    {account.slice(0, 4)}...{account.slice(-4)}
-                  </Badge>
+                  <Wallet size={18} />
+                  <span>{isConnecting ? 'Connecting...' : 'Connect Wallet'}</span>
                 </Button>
-              </div>
-            )}
+              ) : (
+                <div className="flex items-center gap-3">
+                  {/* Wrong Network Warning */}
+                  {!isCorrectNetwork && (
+                    <Button
+                      onClick={switchToSepolia}
+                      variant="destructive"
+                      size="sm"
+                      className="px-4 py-2 text-sm animate-pulse"
+                    >
+                      Switch Network
+                    </Button>
+                  )}
+                  
+                  {/* Wallet Address Badge */}
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={disconnectWallet}
+                    className="flex items-center gap-2 px-4 py-2 border-primary/50 hover:border-primary hover:bg-primary/10 group"
+                  >
+                    <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+                    <Badge variant="outline" className="text-xs font-mono border-0 bg-transparent px-0">
+                      {account.slice(0, 6)}...{account.slice(-4)}
+                    </Badge>
+                    <span className="hidden group-hover:inline text-xs ml-1">Disconnect</span>
+                  </Button>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
