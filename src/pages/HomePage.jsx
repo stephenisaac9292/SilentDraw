@@ -66,7 +66,7 @@ export const HomePage = () => {
             <div>
               <h1 className="text-2xl sm:text-3xl font-bold">Encrypted Lottery</h1>
               <p className="text-sm text-muted-foreground mt-1">
-                Provably fair, fully private lottery on FHEVM
+                Provably fair, fully private lottery
               </p>
             </div>
 
@@ -112,7 +112,7 @@ export const HomePage = () => {
             )}
             {fhevmReady && (
               <Badge variant="default" className="text-xs">
-                FHEVM Ready
+                Encryption Ready
               </Badge>
             )}
             {fhevmError && (
