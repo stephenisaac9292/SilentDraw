@@ -44,15 +44,7 @@ export const Navbar = () => {
 
           {/* Navigation Links */}
           <div className="flex items-center gap-2 sm:gap-3">
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => navigate('/')}
-              className="hidden sm:flex items-center gap-2"
-            >
-              <Home size={16} />
-              Home
-            </Button>
+          
 
              
 

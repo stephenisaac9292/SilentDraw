@@ -177,21 +177,21 @@ export const HomePage = () => {
             size="sm"
             onClick={() => setFilterMode('active')}
           >
-            Active ({activeLotteries.length})
+            Active 
           </Button>
           <Button
             variant={filterMode === 'ended' ? 'default' : 'outline'}
             size="sm"
             onClick={() => setFilterMode('ended')}
           >
-            Ended ({endedLotteries.length})
+            Ended 
           </Button>
           <Button
             variant={filterMode === 'all' ? 'default' : 'outline'}
             size="sm"
             onClick={() => setFilterMode('all')}
           >
-            All ({lotteries.length})
+            All 
           </Button>
           {account && (
             <Button
