@@ -143,7 +143,7 @@ export function useLotteries(signer, refreshTrigger = 0, filterMode = 'all', use
       setLotteries(validLotteries);
     } catch (error) {
       console.error('❌ Failed to fetch lotteries:');
-      setError(error.message);
+      setError( );
       setLotteries([]);
     } finally {
       setLoading(false);
