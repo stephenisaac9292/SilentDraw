@@ -93,16 +93,40 @@ export function useContract(signer) {
    * Draw the winning number (after lottery ends)
    */
   const drawWinningNumber = async (lotteryId) => {
-    if (!contract) throw new Error('Contract not initialized');
-    
-    console.log('🎲 Drawing winning number...', lotteryId);
-    
+  if (!contract) {
+    toast.error('Contract Not Ready', {
+      description: 'Please refresh the page and try again'
+    });
+    return;
+  }
+  
+  console.log('🎲 Drawing winning number...', lotteryId);
+  
+  try {
     const tx = await contract.drawWinningNumber(lotteryId);
     const receipt = await tx.wait();
     
     console.log('✅ Winning number drawn - marked for public decryption');
     return receipt;
-  };
+  } catch (error) {
+    console.error('[Draw Error]:', error);
+    
+    // User-friendly error messages
+    if (error.message?.includes('No tickets sold')) {
+      throw new Error('Cannot draw - no tickets have been sold yet');
+    } else if (error.message?.includes('Lottery not ended')) {
+      throw new Error('The lottery is still running. Please wait for it to end.');
+    } else if (error.message?.includes('Already drawn')) {
+      throw new Error('Winning number has already been drawn for this lottery');
+    } else if (error.code === 4001) {
+      throw new Error('Transaction cancelled');
+    } else if (error.code === -32603) {
+      throw new Error('Transaction failed. Please check if the lottery has ended.');
+    } else {
+      throw new Error('Failed to draw winning number. Please try again.');
+    }
+  }
+};
 
   /**
    * Compute winners by marking tickets for decryption
